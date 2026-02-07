@@ -1,15 +1,14 @@
-let btn = document.getElementById("greetBtn");
-let input = document.getElementById("username");
-let greeting = document.getElementById("greeting");
-btn.onclick = function () {
-    if (input.value !== "") {
-        greeting.innerText = "Hello, " + input.value;
+function changeColor(element) {
+    let color = element.innerText;
+    element.style.backgroundColor = color;
+    element.style.color = "#ffffff";
+}
+function greetUser() {
+    let name = document.getElementById("username").value;
+    let greeting = document.getElementById("greeting");
+    if (name.trim() !== "") {
+        greeting.innerText = "Hello, " + name;
+    } else {
+        greeting.innerText = "Hello";
     }
-};
-let boxes = document.getElementsByClassName("box");
-for (let i = 0; i < boxes.length; i++) {
-    boxes[i].onclick = function () {
-        this.style.backgroundColor = this.dataset.color;
-        this.style.color = "white";
-    };
 }
